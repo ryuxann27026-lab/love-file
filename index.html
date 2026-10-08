@@ -2,412 +2,206 @@
 <html lang="my">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For မမသဲသဲ ❤️</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>A Little Something I Want To Tell You…</title>
 <style>
-*{
-  box-sizing:border-box;
-}
-
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:"Noto Sans Myanmar","Myanmar Text",system-ui,sans-serif}
 body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:Arial,"Myanmar Text",sans-serif;
-  background:linear-gradient(135deg,#ffd6e7,#fff0f6);
-  color:#333;
-  padding:20px;
+  background:linear-gradient(145deg,#fff7f9,#ffeef3 48%,#fffafb);
+  color:#442d35;overflow:hidden;
 }
-
-.card{
-  width:100%;
-  max-width:500px;
-  background:white;
-  border-radius:25px;
-  padding:30px 22px;
-  box-shadow:0 10px 35px rgba(0,0,0,.12);
-  text-align:center;
-}
-
+#app{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:18px}
 .page{
-  display:none;
+  display:none;width:min(92vw,560px);min-height:calc(100vh - 36px);
+  max-height:calc(100vh - 36px);overflow-y:auto;
+  padding:48px 26px 34px;border:1px solid #f0cbd5;border-radius:28px;
+  background:rgba(255,255,255,.9);box-shadow:0 14px 45px rgba(129,57,78,.13);
+  text-align:center;animation:in .35s ease;
 }
-
-.page.active{
-  display:block;
-}
-
-h1{
-  color:#ff4f87;
-  font-size:25px;
-}
-
-.text{
-  font-size:17px;
-  line-height:1.9;
-  white-space:pre-line;
-}
-
+.page.active{display:flex;flex-direction:column;justify-content:center}
+@keyframes in{from{opacity:0;transform:translateX(22px)}to{opacity:1;transform:none}}
+.num{font-size:13px;letter-spacing:2px;color:#b67889;margin-bottom:20px}
+h1{font-size:26px;line-height:1.45;color:#8b1e3f;margin:0 0 24px}
+h2{font-size:22px;line-height:1.5;color:#8b1e3f;margin:0 0 24px}
+p{font-size:16px;line-height:2.05;margin:0;color:#503840}
 button{
-  border:0;
-  padding:14px 24px;
-  margin:8px;
-  border-radius:30px;
-  font-size:16px;
-  cursor:pointer;
-  background:#ff5c91;
-  color:white;
-  box-shadow:0 5px 15px rgba(255,92,145,.3);
+  width:100%;border:0;border-radius:18px;padding:15px 14px;margin-top:28px;
+  background:#8b1e3f;color:white;font-size:15px;font-weight:700;
+  box-shadow:0 8px 20px rgba(139,30,63,.18);cursor:pointer;
 }
-
-button:active{
-  transform:scale(.96);
-}
-
-.record{
-  background:#ff477f;
-  margin-top:20px;
-}
-
-.record.recording{
-  background:#333;
-}
-
-.next{
-  display:none;
-  background:#7c4dff;
-}
-
-.status{
-  margin-top:15px;
-  font-size:15px;
-  color:#777;
-}
-
-audio{
-  width:100%;
-  margin-top:15px;
-  display:none;
-}
+button:active{transform:scale(.98)}
+.answer{background:#fff2f5;color:#8b1e3f;border:1px solid #e8b9c6;box-shadow:none;margin-top:12px}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
+.heart{position:absolute;bottom:-30px;font-size:24px;animation:float 2.8s ease-out forwards}
+@keyframes float{to{transform:translateY(-110vh) rotate(18deg);opacity:0}}
 </style>
 </head>
 
 <body>
+<div id="app">
 
-<div class="card">
+<section class="page active" id="p1">
+<div class="num">PAGE 1 / 7</div>
+<h1>♡<br>A Little Something I Want To Tell You…</h1>
+<p>ဒီစာအုပ်လေးက မမသဲသဲ တစ်ယောက်တည်းအတွက်ပါ။</p>
+<button onclick="go(2)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
 
-  <!-- STEP 1 -->
-  <div id="p1" class="page active">
-    <h1>မမသဲသဲအတွက် 💌</h1>
+<section class="page" id="p2">
+<div class="num">PAGE 2 / 7</div>
+<h2>ဒီစာကို မမသဲသဲတစ်ယောက်တည်းအတွက်</h2>
+<p>
+ဒီစာကိုရေးဖို့ အချိန်နည်းနည်းယူခဲ့တယ်။<br><br>
+ဘာလို့လဲဆိုတော့ စိတ်ထဲမှာရှိတာတွေကို ရိုးရိုးလေးပြောလိုက်ရင် မလုံလောက်သလိုခံစားရလို့ပါ။
+</p>
+<button onclick="go(3)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
 
-    <div class="text">
-မမသဲသဲအတွက် ရေးထားတဲ့စာလေးရှိတယ် ကြိုးစားပြီးရေးထားတာဆိုပေမယ့် အရမ်းပြချင်နေလို့ သေချာတော့ မရေးလိုက်ရဘူး အဲ့အတွက်တောင်းပန်ပါတယ် ကျနော်ရေးထားတဲ့စာလေးကို မမသဲသဲဖတ်မှာလား?
-    </div>
+<section class="page" id="p3">
+<div class="num">PAGE 3 / 7</div>
+<h2>အရမ်းသဘောကျရတဲ့ပုံစံလေး</h2>
+<p>
+မင်းမှာ သဘောကျစရာ ဘာရှိလို့လဲဆိုတာကို ပြောပြဖို့က နည်းနည်းတော့ခက်တယ်။<br>
+ဘာလို့လဲဆိုရင် မင်းကိုသဘောကျမိတဲ့အချက်တွေက အရမ်းများနေမိလို့လေ။<br><br>
+အရပ်ပုပုသေးသေးလေးကို အရမ်းသဘောကျတယ်။<br>
+ပြီးတော့ Voice Clip ပို့တဲ့အခါ ကြားရတဲ့ အသဲဝဲဝဲလေးကို အရမ်းအူယားတယ်။<br>
+စိတ်ဆိုးလို့ ပြောရင်တောင် အသံကြားတာနဲ့ ကိုယ့်မှာ ပြုံးလို့ပဲ။<br><br>
+အဲ့တာတွေထဲမှာ သဘောကျဆုံးက မမသဲသဲနဲ့ စကားပြောရတဲ့အချိန်ပေါ့ဗျာ။<br><br>
+မမသဲသဲနဲ့ စကားမပြောဖြစ်တဲ့အချိန်တွေဆို စိတ်ထဲမှာ တစ်ခုခုဖြစ်လာတယ်ဗျာ။
+</p>
+<button onclick="go(4)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
 
-    <button onclick="go(2)">ဖတ်မယ် ❤️</button>
-    <button onclick="go(3)">မဖတ်ဘူး 😭</button>
-  </div>
+<section class="page" id="p4">
+<div class="num">PAGE 4 / 7</div>
+<h2>ကျနော် မပြောဖြစ်သေးတဲ့အရာ</h2>
+<p>
+တကယ်တော့…<br>
+မမသဲသဲကို သူငယ်ချင်းတစ်ယောက်ထက်ပိုပြီး<br>
+သဘောကျနေမိတာ ကြာပြီ။<br><br>
+ဒါပေမယ့် ဒီစကားကို ထုတ်ပြောဖို့ကြောက်နေလို့ ဘယ်လိုပြောရမလဲဆိုတာ<br>
+အမြဲစဉ်းစားနေခဲ့တာကြာပြီ။
+</p>
+<button onclick="go(5)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
 
+<section class="page" id="p5">
+<div class="num">PAGE 5 / 7</div>
+<h2>ဒီနေ့တော့ မဝှက်တော့ဘူး။</h2>
+<p>
+ကျနော် မမသဲသဲကို သဘောကျတယ်။<br>
+မမသဲသဲနဲ့အတူ ခိုင်မာတဲ့ Relationship တစ်ခုအဖြစ် တည်ဆောက်ချင်တယ်။<br><br>
+အစကတော့ ဒီတိုင်းပဲ ဖလစ်တာပဲ။ ဒါမယ့် ဖလစ်ရင်းချစ်သွားလို့ 🥹<br>
+အရင်ကလိုမျိုး မဖလစ်ချင်တော့ဘူး။<br>
+မမသဲသဲကို ကိုယ့်အပိုင်ဖြစ် ပိုင်ဆိုင်ချင်တယ်။<br>
+မမသဲသဲဘက်က အဆင်ပြေတယ်ဆိုရင်တော့ အတူလက်တွဲသွားချင်ပါတယ်။<br><br>
+<b>ဒါကြောင့်…</b>
+</p>
+<div style="font-size:24px;font-weight:700;color:#8b1e3f;margin-top:12px">
+Will You Be Mine? ❤️
+</div>
+<button onclick="go(6)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
 
-  <!-- STEP 2 -->
-  <div id="p2" class="page">
-    <h1>ကံကောင်းပါတယ် 😍</h1>
+<section class="page" id="p6">
+<div class="num">PAGE 6 / 7</div>
+<h2>နောက်ဆုံးစာ</h2>
+<p>
+မမသဲသဲရဲ့အဖြေက ဘာပဲဖြစ်ဖြစ်<br>
+ဒီစကားကို ပြောရဲခဲ့တာကိုတော့ ကျနော်နောင်တရမှာမဟုတ်ဘူး။<br><br>
+ဘာလို့လဲဆိုတော့<br>
+ကျနော့်စိတ်ထဲက အမှန်အတိုင်း မမသဲသဲကို ပြောပြလိုက်နိုင်ပြီမို့ပါ။ 🤍
+</p>
+<button onclick="go(7)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
 
-    <div class="text">
-ကံကောင်းပါတယ် မှန်ကန်တဲ့ရွေးချယ်မှူလေးပါ😍စာလေးကိုဖတ်မယ်ဆိုရင် အာဘွားပေးပြီးမှ လင့်လေးကျမှာ ဖြစ်ပါတယ် ကဲကဲ အာဘွားလေးအရင်ပေးပါအုန်းဗျ😘
-    </div>
+<section class="page" id="p7">
+<div class="num">LAST PAGE · 7 / 7</div>
+<h2>Your Answer 💌</h2>
+<p>မမသဲသဲရဲ့အဖြေကို အောက်ကထဲက တစ်ခုရွေးပေးပါနော်… 🤍</p>
 
-    <button id="record2" class="record" onclick="toggleRecord(2)">
-      🎙️ အသံသွင်းမယ်
-    </button>
+<button class="answer" onclick="yes()">
+♡ YES ♡<br><small>အတူတူလက်တွဲကြမယ်</small>
+</button>
 
-    <div id="status2" class="status"></div>
+<button class="answer" onclick="maybe()">
+♡ MAYBE ♡<br><small>နည်းနည်းလေး ထပ်စဉ်းစားပါရစေ</small>
+</button>
 
-    <audio id="audio2" controls></audio>
-
-    <button id="next2" class="next" onclick="sendVoiceAndNext(2)">
-      ဆက်သွားမယ် ❤️
-    </button>
-  </div>
-
-
-  <!-- STEP 3 -->
-  <div id="p3" class="page">
-    <h1>အင်း… 😋💕</h1>
-
-    <div class="text">
-စိတ်မကောင်းပါဘူး မဖတ်ဘူးရွေးတော့ကျနော် စိတ်မကောင်းဖြစ်သွားပြီ 😔 ဒါပေမယ့် မှားတာမှန်တယ် စာဖတ်ဖို့ကဒီဘက်မှာထားတာဖြစ်လို့ပါ😋💕စာလေးကိုဖတ်မယ်ဆိုရင် အာဘွားပေးပြီးမှ လင့်လေးကျမှာ ဖြစ်ပါတယ် ကဲကဲ အာဘွားလေးအရင်ပေးပါအုန်းဗျ
-    </div>
-
-    <button id="record3" class="record" onclick="toggleRecord(3)">
-      🎙️ အသံသွင်းမယ်
-    </button>
-
-    <div id="status3" class="status"></div>
-
-    <audio id="audio3" controls></audio>
-
-    <button id="next3" class="next" onclick="sendVoiceAndNext(3)">
-      ဆက်သွားမယ် ❤️
-    </button>
-  </div>
-
-
-  <!-- STEP 4 -->
-  <div id="p4" class="page">
-    <h1>အောင်မြင်ပါတယ် 🤪❤️</h1>
-
-    <div class="text">
-အောင်မြင်ပါတယ် ဒါပေမယ့် မမသဲသဲ လူလည်ကျခံလိုက်ရပါပြီ🤪 အမှန်တော့ linkကို Telegram မှာ လာယူရမှာပါ ကဲကဲလာခဲ့ပါအုန်းဗျ
-    </div>
-
-    <div style="font-size:45px;margin-top:20px;">
-      💕🥰💕
-    </div>
-  </div>
+<button class="answer" onclick="think()">
+♡ LET ME THINK ♡<br><small>အချိန်နည်းနည်းပေးပါဦး</small>
+</button>
+</section>
 
 </div>
 
+<div class="hearts" id="hearts"></div>
 
 <script>
-
-const NOTIFY_URL =
-"https://script.google.com/macros/s/AKfycbx3NnVgmlUFe6YmEXOKGv9OqY4E92lULW_2D0wjhyapDEdMLswqKQ4tcRls3LhY6yQTIw/exec";
-
-let recorder = null;
-let chunks = [];
-let recordedBlob = null;
-let currentStep = null;
-
-
-function go(step){
-
-  document.querySelectorAll(".page").forEach(p=>{
-    p.classList.remove("active");
-  });
-
-  document.getElementById("p"+step).classList.add("active");
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+function go(n){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById('p'+n).classList.add('active');
+window.scrollTo(0,0);
 }
 
+function burst(count=55){
+const box=document.getElementById('hearts');
+const icons=['❤️','💗','💕','💖','💘'];
 
-async function toggleRecord(step){
-
-  const button = document.getElementById("record"+step);
-  const status = document.getElementById("status"+step);
-
-  if(recorder && recorder.state === "recording"){
-
-    recorder.stop();
-
-    button.classList.remove("recording");
-    button.innerText = "🎙️ အသံပြန်သွင်းမယ်";
-
-    status.innerText = "အသံကို ပြင်ဆင်နေပါတယ်...";
-
-    return;
-  }
-
-
-  try{
-
-    const stream =
-      await navigator.mediaDevices.getUserMedia({
-        audio:true
-      });
-
-    chunks = [];
-    recordedBlob = null;
-    currentStep = step;
-
-    let options = {};
-
-    /*
-      iPhone Safari မှာ audio/mp4 ရနိုင်ပါတယ်။
-      အခြား browser တွေမှာ webm ရနိုင်ပါတယ်။
-    */
-
-    if(MediaRecorder.isTypeSupported("audio/mp4")){
-      options.mimeType = "audio/mp4";
-    }
-    else if(MediaRecorder.isTypeSupported("audio/webm")){
-      options.mimeType = "audio/webm";
-    }
-
-    recorder = new MediaRecorder(stream, options);
-
-    recorder.ondataavailable = event => {
-
-      if(event.data && event.data.size > 0){
-        chunks.push(event.data);
-      }
-
-    };
-
-
-    recorder.onstop = () => {
-
-      recordedBlob = new Blob(
-        chunks,
-        {
-          type: recorder.mimeType || "audio/mp4"
-        }
-      );
-
-      stream.getTracks().forEach(track=>{
-        track.stop();
-      });
-
-      const audio =
-        document.getElementById("audio"+step);
-
-      audio.src =
-        URL.createObjectURL(recordedBlob);
-
-      audio.style.display = "block";
-
-      document.getElementById("next"+step)
-        .style.display = "inline-block";
-
-      status.innerText =
-        "အသံသွင်းပြီးပါပြီ ❤️ အောက်ကနေ ပြန်နားထောင်လို့ရပါတယ်။";
-    };
-
-
-    recorder.start();
-
-    button.classList.add("recording");
-    button.innerText = "⏹️ အသံရပ်မယ်";
-
-    status.innerText =
-      "🔴 အသံသွင်းနေပါတယ်... ပြောပြီးရင် ရပ်မယ်ကိုနှိပ်ပါ။";
-
-  }
-
-  catch(error){
-
-    status.innerText =
-      "⚠️ Microphone အသုံးပြုခွင့် မရပါ။ Safari မှာ Allow လုပ်ပေးပါ။";
-
-    console.log(error);
-  }
+for(let i=0;i<count;i++){
+const h=document.createElement('span');
+h.className='heart';
+h.textContent=icons[Math.floor(Math.random()*icons.length)];
+h.style.left=Math.random()*100+'vw';
+h.style.fontSize=(16+Math.random()*25)+'px';
+h.style.animationDelay=(Math.random()*.9)+'s';
+box.appendChild(h);
+setTimeout(()=>h.remove(),3600);
+}
 }
 
+/* Telegram notification */
+const NOTIFY_URL = "https://script.google.com/macros/s/AKfycbx3NnVgmlUFe6YmEXOKGv9OqY4E92lULW_2D0wjhyapDEdMLswqKQ4tcRls3LhY6yQTIw/exec";
 
-function blobToBase64(blob){
+function notifyChoice(choice){
+if(!NOTIFY_URL)return;
 
-  return new Promise((resolve,reject)=>{
-
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-
-      const result = reader.result;
-
-      const base64 =
-        result.split(",")[1];
-
-      resolve(base64);
-    };
-
-    reader.onerror = reject;
-
-    reader.readAsDataURL(blob);
-  });
+try{
+fetch(NOTIFY_URL,{
+method:"POST",
+mode:"no-cors",
+headers:{
+"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"
+},
+body:new URLSearchParams({
+choice:choice,
+source:"Love File — မမသဲသဲ"
+}).toString()
+});
+}catch(e){}
 }
 
+function yes(){
+notifyChoice("YES ❤️");
+burst(90);
 
-async function sendVoiceAndNext(step){
-
-  if(!recordedBlob){
-
-    alert("အရင်ဆုံး အသံသွင်းပေးပါ ❤️");
-
-    return;
-  }
-
-  const nextButton =
-    document.getElementById("next"+step);
-
-  const status =
-    document.getElementById("status"+step);
-
-  nextButton.disabled = true;
-  nextButton.innerText = "ပို့နေပါတယ်...";
-
-  status.innerText =
-    "💌 အသံလေးကို Telegram ဆီပို့နေပါတယ်...";
-
-  try{
-
-    const base64 =
-      await blobToBase64(recordedBlob);
-
-    const formData =
-      new URLSearchParams();
-
-    formData.append(
-      "choice",
-      step === 2
-        ? "ဖတ်မယ် ❤️"
-        : "မဖတ်ဘူး 😭"
-    );
-
-    formData.append(
-      "source",
-      "Love File — မမသဲသဲ"
-    );
-
-    formData.append(
-      "mimeType",
-      recordedBlob.type || "audio/mp4"
-    );
-
-    formData.append(
-      "audioBase64",
-      base64
-    );
-
-
-    await fetch(
-      NOTIFY_URL,
-      {
-        method:"POST",
-        mode:"no-cors",
-        headers:{
-          "Content-Type":
-            "application/x-www-form-urlencoded;charset=UTF-8"
-        },
-        body:formData.toString()
-      }
-    );
-
-
-    go(4);
-
-  }
-
-  catch(error){
-
-    console.log(error);
-
-    status.innerText =
-      "⚠️ ပို့ရာမှာ ပြဿနာရှိသွားပါတယ်။";
-
-    nextButton.disabled = false;
-
-    nextButton.innerText =
-      "ပြန်ပို့မယ် ❤️";
-  }
+setTimeout(()=>{
+alert('🥹❤️ ဒါဆို ကျနော်တို့ အတူတူလက်တွဲကြမယ်နော်…');
+},700);
 }
 
+function maybe(){
+notifyChoice("MAYBE 🌷");
+
+alert('🌷 အဆင်ပြေပါတယ်။ မမသဲသဲ အေးအေးဆေးဆေး စဉ်းစားလို့ရတယ်နော် 🤍');
+}
+
+function think(){
+notifyChoice("LET ME THINK 🫶");
+
+alert('🫶 ရပါတယ်။ ကျနော် အချိန်ပေးပြီး စောင့်နေမယ်နော် 🤍');
+}
 </script>
 
 </body>
