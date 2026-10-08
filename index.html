@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>A Little Something I Want To Tell You…</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:"Noto Sans Myanmar","Myanmar Text",system-ui,sans-serif}
+body{
+  background:linear-gradient(145deg,#fff7f9,#ffeef3 48%,#fffafb);
+  color:#442d35; overflow:hidden;
+}
+#app{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:18px}
+.page{
+  display:none;width:min(92vw,560px);min-height:calc(100vh - 36px);
+  max-height:calc(100vh - 36px);overflow-y:auto;
+  padding:48px 26px 34px;border:1px solid #f0cbd5;border-radius:28px;
+  background:rgba(255,255,255,.9);box-shadow:0 14px 45px rgba(129,57,78,.13);
+  text-align:center;animation:in .35s ease;
+}
+.page.active{display:flex;flex-direction:column;justify-content:center}
+@keyframes in{from{opacity:0;transform:translateX(22px)}to{opacity:1;transform:none}}
+.num{font-size:13px;letter-spacing:2px;color:#b67889;margin-bottom:20px}
+h1{font-size:26px;line-height:1.45;color:#8b1e3f;margin:0 0 24px}
+h2{font-size:22px;line-height:1.5;color:#8b1e3f;margin:0 0 24px}
+p{font-size:16px;line-height:2.05;margin:0;color:#503840}
+.quote{font-size:14px;color:#9b6675;line-height:1.9}
+.question{font-size:24px;font-weight:700;color:#8b1e3f;margin-top:12px}
+button{
+  width:100%;border:0;border-radius:18px;padding:15px 14px;margin-top:28px;
+  background:#8b1e3f;color:white;font-size:15px;font-weight:700;
+  box-shadow:0 8px 20px rgba(139,30,63,.18);cursor:pointer;
+}
+button:active{transform:scale(.98)}
+.answer{background:#fff2f5;color:#8b1e3f;border:1px solid #e8b9c6;box-shadow:none;margin-top:12px}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
+.heart{position:absolute;bottom:-30px;font-size:24px;animation:float 2.8s ease-out forwards}
+@keyframes float{to{transform:translateY(-110vh) rotate(18deg);opacity:0}}
+</style>
+</head>
+<body>
+<div id="app">
+
+<section class="page active" id="p1">
+  <div class="num">PAGE 1 / 7</div>
+  <h1>♡<br>A Little Something I Want To Tell You…</h1>
+  <p>ဒီစာအုပ်လေးက မမသဲသဲ တစ်ယောက်တည်းအတွက်ပါ။</p>
+  <button onclick="go(2)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
+
+<section class="page" id="p2">
+  <div class="num">PAGE 2 / 7</div>
+  <h2>ဒီစာကို မမသဲသဲတစ်ယောက်တည်းအတွက်</h2>
+  <p>ဒီစာကိုရေးဖို့ အချိန်နည်းနည်းယူခဲ့တယ်။<br><br>
+  ဘာလို့လဲဆိုတော့ စိတ်ထဲမှာရှိတာတွေကို ရိုးရိုးလေးပြောလိုက်ရင် မလုံလောက်သလိုခံစားရလို့ပါ။</p>
+  <button onclick="go(3)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
+
+<section class="page" id="p3">
+  <div class="num">PAGE 3 / 7</div>
+  <h2>အရမ်းသဘောကျရတဲ့ပုံစံလေး</h2>
+  <p>
+  မင်းမှာ သဘောကျစရာ ဘာရှိလို့လဲဆိုတာကို ပြောပြဖို့က နည်းနည်းတော့ခက်တယ်။<br>
+  ဘာလို့လဲဆိုရင် မင်းကိုသဘောကျမိတဲ့အချက်တွေက အရမ်းများနေမိလို့လေ။<br><br>
+  အရပ်ပုပုသေးသေးလေးကို အရမ်းသဘောကျတယ်။<br>
+  ပြီးတော့ Voice Clip ပို့တဲ့အခါ ကြားရတဲ့ အသဲဝဲဝဲလေးကို အရမ်းအူယားတယ်။<br>
+  စိတ်ဆိုးလို့ ပြောရင်တောင် အသံကြားတာနဲ့ ကိုယ့်မှာ ပြုံးလို့ပဲ။<br><br>
+  အဲ့တာတွေထဲမှာ သဘောကျဆုံးက မမသဲသဲနဲ့ စကားပြောရတဲ့အချိန်ပေါ့ဗျာ။<br><br>
+  မမသဲသဲနဲ့ စကားမပြောဖြစ်တဲ့အချိန်တွေဆို စိတ်ထဲမှာ တစ်ခုခုဖြစ်လာတယ်ဗျာ။
+  </p>
+  <button onclick="go(4)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
+
+<section class="page" id="p4">
+  <div class="num">PAGE 4 / 7</div>
+  <h2>ကျနော် မပြောဖြစ်သေးတဲ့အရာ</h2>
+  <p>
+  တကယ်တော့…<br>
+  မမသဲသဲကို သူငယ်ချင်းတစ်ယောက်ထက်ပိုပြီး<br>
+  သဘောကျနေမိတာ ကြာပြီ။<br><br>
+  ဒါပေမယ့် ဒီစကားကို ထုတ်ပြောဖို့ကြောက်နေလို့ ဘယ်လိုပြောရမလဲဆိုတာ<br>
+  အမြဲစဉ်းစားနေခဲ့တာကြာပြီ။
+  </p>
+  <button onclick="go(5)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
+
+<section class="page" id="p5">
+  <div class="num">PAGE 5 / 7</div>
+  <h2>ဒီနေ့တော့ မဝှက်တော့ဘူး။</h2>
+  <p>
+  ကျနော် မမသဲသဲကို သဘောကျတယ်။<br>
+  မမသဲသဲနဲ့အတူ ခိုင်မာတဲ့ Relationship တစ်ခုအဖြစ် တည်ဆောက်ချင်တယ်။<br><br>
+  အစကတော့ ဒီတိုင်းပဲ ဖလစ်တာပဲ။ ဒါမယ့် ဖလစ်ရင်းချစ်သွားလို့ 🥹<br>
+  အရင်ကလိုမျိုး မဖလစ်ချင်တော့ဘူး။<br>
+  မမသဲသဲကို ကိုယ့်အပိုင်ဖြစ် ပိုင်ဆိုင်ချင်တယ်။<br>
+  မမသဲသဲဘက်က အဆင်ပြေတယ်ဆိုရင်တော့ အတူလက်တွဲသွားချင်ပါတယ်။<br><br>
+  <b>ဒါကြောင့်…</b>
+  </p>
+  <div class="question">Will You Be Mine? ❤️</div>
+  <button onclick="go(6)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
+
+<section class="page" id="p6">
+  <div class="num">PAGE 6 / 7</div>
+  <h2>နောက်ဆုံးစာ</h2>
+  <p>
+  မမသဲသဲရဲ့အဖြေက ဘာပဲဖြစ်ဖြစ်<br>
+  ဒီစကားကို ပြောရဲခဲ့တာကိုတော့ ကျနော်နောင်တရမှာမဟုတ်ဘူး။<br><br>
+  ဘာလို့လဲဆိုတော့<br>
+  ကျနော့်စိတ်ထဲက အမှန်အတိုင်း မမသဲသဲကို ပြောပြလိုက်နိုင်ပြီမို့ပါ။ 🤍
+  </p>
+  <button onclick="go(7)">နောက်တစ်ခုဖတ်မယ် →</button>
+</section>
+
+<section class="page" id="p7">
+  <div class="num">LAST PAGE · 7 / 7</div>
+  <h2>Your Answer 💌</h2>
+  <p>မမသဲသဲရဲ့အဖြေကို အောက်ကထဲက တစ်ခုရွေးပေးပါနော်… 🤍</p>
+  <button class="answer" onclick="yes()">♡ YES ♡<br><small>အတူတူလက်တွဲကြမယ်</small></button>
+  <button class="answer" onclick="maybe()">♡ MAYBE ♡<br><small>နည်းနည်းလေး ထပ်စဉ်းစားပါရစေ</small></button>
+  <button class="answer" onclick="think()">♡ LET ME THINK ♡<br><small>အချိန်နည်းနည်းပေးပါဦး</small></button>
+</section>
+
+</div>
+<div class="hearts" id="hearts"></div>
+
+<script>
+function go(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('p'+n).classList.add('active');
+  window.scrollTo(0,0);
+}
+function burst(count=55){
+  const box=document.getElementById('hearts');
+  const icons=['❤️','💗','💕','💖','💘'];
+  for(let i=0;i<count;i++){
+    const h=document.createElement('span'); h.className='heart';
+    h.textContent=icons[Math.floor(Math.random()*icons.length)];
+    h.style.left=Math.random()*100+'vw';
+    h.style.fontSize=(16+Math.random()*25)+'px';
+    h.style.animationDelay=(Math.random()*.9)+'s';
+    box.appendChild(h);
+    setTimeout(()=>h.remove(),3600);
+  }
+}
+function yes(){burst(90);setTimeout(()=>alert('🥹❤️ ဒါဆို ကျနော်တို့ အတူတူလက်တွဲကြမယ်နော်…'),700)}
+function maybe(){alert('🌷 အဆင်ပြေပါတယ်။ မမသဲသဲ အေးအေးဆေးဆေး စဉ်းစားလို့ရတယ်နော် 🤍')}
+function think(){alert('🫶 ရပါတယ်။ ကျနော် အချိန်ပေးပြီး စောင့်နေမယ်နော် 🤍')}
+</script>
+</body>
+</html>
