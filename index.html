@@ -1,198 +1,330 @@
+
 <!DOCTYPE html>
 <html lang="my">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For မမသဲသဲ ❤️</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;min-height:100vh;padding:18px;
- display:flex;align-items:center;justify-content:center;
- background:linear-gradient(135deg,#ffe0eb,#ffc2d5,#fff0f5);
- font-family:Arial,sans-serif;color:#71364d;
+* {
+  box-sizing: border-box;
 }
-.card{
- width:100%;max-width:440px;padding:25px 20px;
- background:#fffafa;border-radius:25px;text-align:center;
- box-shadow:0 10px 35px #d65b8433;overflow:hidden;
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Noto Sans Myanmar', sans-serif;
+  background: linear-gradient(135deg, #3b071b, #8e1747, #250817);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
-.page{display:none}
-.page.active{display:block}
-h1{color:#e65383;font-size:24px}
-p{font-size:16px;line-height:1.9;text-align:left}
-.heart{font-size:38px;margin:10px}
-button{
- border:0;border-radius:30px;padding:13px 24px;
- font-size:16px;font-weight:bold;cursor:pointer;
- transition:all .3s ease;
+
+.page {
+  width: 90%;
+  max-width: 430px;
+  min-height: 570px;
+  padding: 30px 23px;
+  margin: 25px auto;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 25px;
+  background: rgba(255,255,255,.10);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0,0,0,.35);
+  text-align: center;
+  display: none;
+  position: relative;
+  overflow: hidden;
 }
-.next,.yes{background:#ed6391;color:white}
-.no{background:#eee;color:#555}
-.buttons{
- display:flex;flex-direction:column;
- align-items:center;gap:12px;margin-top:25px;
+
+.page.active {
+  display: block;
+  animation: appear .7s ease;
 }
-.small-text{color:#c77995;font-size:13px}
-#ending{display:none}
-.burst{
- position:fixed;top:-30px;font-size:25px;
- pointer-events:none;animation:fall 3s linear forwards;
- z-index:10;
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-@keyframes fall{
- to{transform:translateY(110vh) rotate(360deg);opacity:0}
+
+h1 {
+  color: #ffd5e5;
+  font-size: 25px;
+  line-height: 1.7;
+}
+
+p {
+  font-size: 16px;
+  line-height: 2.1;
+  color: #fff1f6;
+}
+
+.heart {
+  font-size: 45px;
+  margin: 12px 0;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
+
+.next-btn, .yes-btn, .no-btn {
+  font-family: inherit;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all .25s ease;
+}
+
+.next-btn {
+  margin-top: 25px;
+  padding: 13px 25px;
+  background: #ffb6d0;
+  color: #570d2d;
+  font-size: 15px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.yes-btn {
+  background: #ff4f91;
+  color: white;
+  font-size: 17px;
+  padding: 13px 25px;
+  box-shadow: 0 5px 18px rgba(255,50,130,.35);
+  z-index: 2;
+}
+
+.no-btn {
+  background: #eeeeee;
+  color: #444;
+  font-size: 16px;
+  padding: 13px 25px;
+  min-width: 65px;
+  min-height: 40px;
+  z-index: 1;
+}
+
+#hint {
+  margin-top: 20px;
+  color: #ffd5e5;
+  font-size: 14px;
+}
+
+#ending {
+  display: none;
+  animation: appear 1s ease;
+}
+
+#ending h1 {
+  color: #ffb6d0;
+}
+
+.float-heart {
+  position: fixed;
+  bottom: -30px;
+  font-size: 22px;
+  pointer-events: none;
+  animation: floatUp 4s linear forwards;
+  z-index: 10;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 </style>
 </head>
 
 <body>
-<div class="card">
 
+<!-- PAGE 1 -->
 <section class="page active" id="page1">
-<div class="heart">💗</div>
-<h1>A Little Something For You...</h1>
-<p>
-မမသဲသဲရေ... ❤️
-<br><br>
-ဒီစာလေးကို မမသဲသဲအတွက်ပဲ ရည်ရွယ်ပြီး ရေးထားတာပါ။
-<br><br>
-တစ်ခါတလေ လူတစ်ယောက်ကို သဘောကျမိဖို့ အကြောင်းပြချက်တွေ အများကြီး မလိုပါဘူး။ သူ့ရဲ့ အပြုံးလေးတစ်ခု၊ စကားပြောပုံလေးတစ်ခုကတောင် ကိုယ့်ရဲ့နေ့ရက်တွေကို ပျော်ရွှင်စေနိုင်ပါတယ်။
-<br><br>
-မမသဲသဲနဲ့ စကားပြောရတဲ့အချိန်တွေ၊ မမရဲ့အသံလေးတွေ ကြားရတဲ့အချိန်တွေက ကျနော့်အတွက် တကယ်ကို အမှတ်တရဖြစ်စေပါတယ်။
-<br><br>
-မမသဲသဲကို သဘောကျတဲ့စိတ်က တစ်နေ့တခြား ပိုပြီးများလာခဲ့တယ်။ ဒီခံစားချက်လေးကို မမသိစေချင်လို့ ဒီစာလေးကို ဖန်တီးထားတာပါ။
-<br><br>
-ဒီစာလေးကို အဆုံးထိ ဖတ်ပေးပါနော်။ 🥺
-</p>
-<button class="next" onclick="showPage2()">နောက်တစ်ခုဖတ်မယ် →</button>
+  <div class="heart">❤️</div>
+
+  <h1>A Little Something I Want To Tell You...</h1>
+
+  <p>
+    ဒီစာအုပ်လေးက မမသဲသဲ တစ်ယောက်တည်းအတွက်ပါ။ ❤️
+    <br><br>
+    မမသဲသဲရဲ့ အပြုံးလေးတွေကို သဘောကျတယ်။
+    မမရဲ့ အသံလေးတွေကိုလည်း ကြားရတာ သဘောကျတယ်။
+    <br><br>
+    မမနဲ့ စကားပြောနေရတဲ့ အချိန်လေးတွေက
+    ကျနော့်အတွက် အရမ်းပျော်စရာကောင်းတယ်။
+    <br><br>
+    မမသဲသဲကို ပြောချင်တဲ့ စကားလေးတွေ
+    ဒီစာမျက်နှာလေးတွေထဲမှာ ထည့်ထားတယ်နော်။
+  </p>
+
+  <button class="next-btn" onclick="goToPage2()">
+    နောက်တစ်ခုဖတ်မယ် →
+  </button>
 </section>
 
+
+<!-- PAGE 2 -->
 <section class="page" id="page2">
-<div id="proposal">
-<div class="heart">🥺💗</div>
-<h1>မမသဲသဲရဲ့ အဖြေလေး သိချင်ပါပြီ…</h1>
-<p>
-မမသဲသဲရေ…
-<br><br>
-ကျနော် ဒီစကားလေးကို ပြောခဲ့တာလည်း အခုဆို တစ်လပြည့်သွားပြီနော်။
-<br><br>
-အဲ့ဒီတစ်လအတွင်း မမသဲသဲကို အဖြေပေးဖို့ အချိန်ယူပြီး စဉ်းစားခွင့်ပေးခဲ့ပါတယ်။ မမသဲသဲရဲ့ ဆုံးဖြတ်ချက်ကိုလည်း ကျနော် နားလည်ပေးချင်ပါတယ်။
-<br><br>
-ဒါပေမဲ့ အခုတော့ ကျနော်လည်း မမသဲသဲဆီက အဖြေလေးတစ်ခု ကြားချင်နေပါပြီ။ တစ်လတောင် ပြည့်သွားပြီဆိုတော့ အဖြေလေးပေးသင့်ပြီလို့ ထင်မိတယ်ဗျာ။ 🤭
-<br><br>
-ကျနော်ကတော့ မမသဲသဲနဲ့အတူ ရယ်မောရင်း၊ တစ်ယောက်ကိုတစ်ယောက် ဂရုစိုက်ရင်း၊ ပျော်ရွှင်စရာနေ့ရက်လေးတွေ အတူတူဖြတ်သန်းချင်ပါတယ်။
-<br><br>
-<b>မမသဲသဲရေ… ကျနော့်ရဲ့ ချစ်သူလေး ဖြစ်ပေးနိုင်မလားဟင်။</b> 🥹💗
-<br><br>
-<b>Will You Be Mine? ❤️</b>
-</p>
+  <div id="proposal">
 
-<div class="buttons" id="buttons">
-<button class="yes" id="yesBtn" onclick="chooseYes()">YES ❤️</button>
-<button class="no" id="noBtn" onclick="chooseNo()">NO 💔</button>
-</div>
+    <div class="heart">💗</div>
 
-<div class="small-text" id="hint">မမသဲသဲရဲ့ အဖြေလေးကို စောင့်နေပါတယ် ❤️</div>
-</div>
+    <h1>မမသဲသဲရဲ့ အဖြေလေး သိချင်ပါပြီ…</h1>
 
-<div id="ending">
-<div class="heart">💍❤️</div>
-<h1>YOU ARE MY LOVE ❤️</h1>
-<p>
-တကယ်ပဲလား မမသဲသဲရေ… 🥹❤️
-<br><br>
-ဒီနေ့ကစပြီး မမသဲသဲကို ချစ်သူလို့ ခေါ်ခွင့်ရပြီပေါ့နော်။
-<br><br>
-မမသဲသဲရဲ့ အပြုံးလေးတွေကို ပျော်ရွှင်စေချင်တယ်။ ဝမ်းနည်းတဲ့အချိန်တွေမှာလည်း အနားမှာရှိပေးချင်တယ်။
-<br><br>
-စိတ်ဆိုးတဲ့အခါ ချော့ပေးမယ်။ ပျော်တဲ့အခါ အတူတူရယ်မယ်။
-<br><br>
-အမြဲတမ်း အကောင်းဆုံးချစ်သူတစ်ယောက်ဖြစ်အောင် ကြိုးစားပါ့မယ်။
-<br><br>
-ဒီနေ့ကစပြီး ကျနော်တို့ရဲ့ အချစ်ဇာတ်လမ်းလေး စတင်ပါပြီ။
-<br><br>
-<b>I LOVE YOU, မမသဲသဲ။ 💍💕</b>
-</p>
-</div>
+    <p>
+      ကျနော် ဒီစကားလေးကို ပြောခဲ့တာလည်း
+      အခုဆို တစ်လပြည့်သွားပြီနော်။ ❤️
+      <br><br>
+      မမသဲသဲရေ…
+      <br>
+      ကျနော့်ရဲ့ ချစ်သူလေး ဖြစ်ပေးနိုင်မလားဟင်။
+    </p>
+
+    <div class="buttons" id="choiceButtons">
+      <button class="yes-btn" id="yesBtn" onclick="chooseYes()">
+        YES ❤️
+      </button>
+
+      <button class="no-btn" id="noBtn" onclick="chooseNo()">
+        NO 💔
+      </button>
+    </div>
+
+    <div id="hint">မမရဲ့ အဖြေလေးကို စောင့်နေမယ်နော်… 🥺</div>
+  </div>
+
+  <div id="ending">
+    <div class="heart">💍❤️</div>
+
+    <h1>YOU ARE MY LOVE ❤️</h1>
+
+    <p>
+      တကယ်ပဲလား မမသဲသဲရေ… 🥹❤️
+      <br><br>
+      ဒီနေ့ကစပြီး မမသဲသဲကို ချစ်သူလို့
+      ခေါ်ခွင့်ရပြီပေါ့နော်။
+      <br><br>
+      မမသဲသဲရဲ့ အပြုံးလေးတွေကို
+      ပျော်ရွှင်စေချင်တယ်။
+      ဝမ်းနည်းတဲ့အချိန်တွေမှာလည်း
+      အနားမှာရှိပေးချင်တယ်။
+      <br><br>
+      စိတ်ဆိုးတဲ့အခါ ချော့ပေးမယ်။
+      ပျော်တဲ့အခါ အတူတူရယ်မယ်။
+      အမြဲတမ်း အကောင်းဆုံးချစ်သူတစ်ယောက်
+      ဖြစ်အောင် ကြိုးစားပါ့မယ်။
+      <br><br>
+      ဒီနေ့ကစပြီး ကျနော်တို့ရဲ့
+      အချစ်ဇာတ်လမ်းလေး စတင်ပါပြီ။ ❤️
+      <br><br>
+      <strong>I LOVE YOU, မမသဲသဲ။ 💍💕</strong>
+    </p>
+  </div>
 </section>
-</div>
+
 
 <script>
-const NOTIFY_URL="https://script.google.com/macros/s/AKfycbx3NnVgmlUFe6YmEXOKGv9OqY4E92lULW_2D0wjhyapDEdMLswqKQ4tcRls3LhY6yQTIw/exec";
+const NOTIFY_URL = "https://script.google.com/macros/s/AKfycbx3NnVgmlUFe6YmEXOKGv9OqY4E92lULW_2D0wjhyapDEdMLswqKQ4tcRls3LhY6yQTIw/exec";
 
-let noCount=0;
-let noNotified=false;
-let yesChosen=false;
+let noCount = 0;
+let noNotified = false;
+let yesChosen = false;
 
-function notifyChoice(choice){
- try{
-  fetch(NOTIFY_URL,{
-   method:"POST",
-   mode:"no-cors",
-   headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
-   body:new URLSearchParams({
-    choice:choice,
-    source:"Love File — မမသဲသဲ"
-   }).toString()
-  });
- }catch(e){}
+function notifyChoice(choice) {
+  try {
+    fetch(NOTIFY_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+      },
+      body: new URLSearchParams({
+        choice: choice,
+        source: "Love File — မမသဲသဲ"
+      }).toString()
+    });
+  } catch (e) {}
 }
 
-function showPage2(){
- document.getElementById("page1").classList.remove("active");
- document.getElementById("page2").classList.add("active");
+function goToPage2() {
+  document.getElementById("page1").classList.remove("active");
+  document.getElementById("page2").classList.add("active");
 }
 
-function chooseNo(){
- if(yesChosen)return;
+function chooseNo() {
+  if (yesChosen) return;
 
- noCount++;
+  noCount++;
 
- const yesBtn=document.getElementById("yesBtn");
- const noBtn=document.getElementById("noBtn");
+  const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
 
- yesBtn.style.fontSize=(17+noCount*3)+"px";
- yesBtn.style.padding=(13+noCount*2)+"px "+(24+noCount*3)+"px";
+  yesBtn.style.fontSize = (17 + noCount * 2) + "px";
+  yesBtn.style.padding =
+    (13 + noCount) + "px " + (25 + noCount * 2) + "px";
 
- noBtn.style.fontSize=Math.max(5,16-noCount*2)+"px";
- noBtn.style.padding=Math.max(1,13-noCount*2)+"px "+Math.max(2,24-noCount*3)+"px";
+  const scale = Math.max(0.15, 1 - noCount * 0.085);
+  noBtn.style.transform = "scale(" + scale + ")";
 
- if(!noNotified){
-  notifyChoice("NO 💔");
-  noNotified=true;
- }
+  if (!noNotified) {
+    notifyChoice("NO 💔");
+    noNotified = true;
+  }
 
- if(noCount>=6){
-  noBtn.style.display="none";
-  document.getElementById("hint").textContent="❤️";
- }
+  if (noCount >= 10) {
+    noBtn.remove();
+    document.getElementById("hint").textContent = "❤️";
+  }
 }
 
-function chooseYes(){
- if(yesChosen)return;
- yesChosen=true;
+function chooseYes() {
+  if (yesChosen) return;
 
- notifyChoice("YES ❤️");
+  yesChosen = true;
 
- document.getElementById("proposal").style.display="none";
- document.getElementById("ending").style.display="block";
+  notifyChoice("YES ❤️");
 
- for(let i=0;i<35;i++){
-  setTimeout(createHeart,i*100);
- }
+  document.getElementById("proposal").style.display = "none";
+  document.getElementById("ending").style.display = "block";
+
+  burst(120);
 }
 
-function createHeart(){
- const heart=document.createElement("div");
- heart.className="burst";
- heart.textContent=["❤️","💕","💗","💖","💘"][Math.floor(Math.random()*5)];
- heart.style.left=Math.random()*100+"vw";
- heart.style.animationDuration=(2+Math.random()*2)+"s";
- document.body.appendChild(heart);
- setTimeout(()=>heart.remove(),4000);
+function burst(amount) {
+  for (let i = 0; i < amount; i++) {
+    setTimeout(() => {
+      const heart = document.createElement("div");
+      heart.className = "float-heart";
+      heart.textContent = ["❤️", "💕", "💗", "💖", "💘"][
+        Math.floor(Math.random() * 5)
+      ];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration =
+        (3 + Math.random() * 3) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 6000);
+    }, i * 25);
+  }
 }
 </script>
+
 </body>
 </html>
