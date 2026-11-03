@@ -5,236 +5,195 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For မမသဲသဲ ❤️</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;font-family:'Noto Sans Myanmar',sans-serif;
+ background:linear-gradient(135deg,#3b071b,#8e1747,#250817);
+ color:white;display:flex;justify-content:center;align-items:center;
+ overflow-x:hidden;
 }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Noto Sans Myanmar', sans-serif;
-  background: linear-gradient(135deg, #3b071b, #8e1747, #250817);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
+.page{
+ width:90%;max-width:430px;min-height:570px;padding:30px 23px;
+ margin:25px auto;border:1px solid rgba(255,255,255,.25);
+ border-radius:25px;background:rgba(255,255,255,.10);
+ backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(0,0,0,.35);
+ text-align:center;display:none;position:relative;
 }
-
-.page {
-  width: 90%;
-  max-width: 430px;
-  min-height: 570px;
-  padding: 30px 23px;
-  margin: 25px auto;
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 25px;
-  background: rgba(255,255,255,.10);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 40px rgba(0,0,0,.35);
-  text-align: center;
-  display: none;
-  position: relative;
-  overflow: hidden;
+.page.active{display:block;animation:appear .7s ease}
+@keyframes appear{
+ from{opacity:0;transform:translateY(15px)}
+ to{opacity:1;transform:translateY(0)}
 }
-
-.page.active {
-  display: block;
-  animation: appear .7s ease;
+h1{color:#ffd5e5;font-size:24px;line-height:1.8}
+p{font-size:15px;line-height:2.15;color:#fff1f6}
+.heart{font-size:45px;margin:12px 0;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+.next-btn,.yes-btn,.no-btn{
+ font-family:inherit;border:none;border-radius:30px;
+ cursor:pointer;font-weight:bold;transition:all .25s ease;
 }
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+.next-btn{
+ margin-top:25px;padding:13px 25px;
+ background:#ffb6d0;color:#570d2d;font-size:15px;
 }
-
-h1 {
-  color: #ffd5e5;
-  font-size: 25px;
-  line-height: 1.7;
+.buttons{
+ display:flex;flex-direction:column;align-items:center;
+ gap:13px;margin-top:30px;
 }
-
-p {
-  font-size: 16px;
-  line-height: 2.1;
-  color: #fff1f6;
+.yes-btn{
+ background:#ff4f91;color:white;font-size:17px;
+ padding:13px 25px;box-shadow:0 5px 18px rgba(255,50,130,.35);
 }
-
-.heart {
-  font-size: 45px;
-  margin: 12px 0;
-  animation: beat 1s infinite;
+.no-btn{
+ background:#eee;color:#444;font-size:16px;
+ padding:13px 25px;min-width:65px;min-height:40px;
 }
-
-@keyframes beat {
-  50% { transform: scale(1.2); }
+#hint{margin-top:20px;color:#ffd5e5;font-size:14px}
+#ending{display:none;animation:appear 1s ease}
+#ending h1{color:#ffb6d0}
+.float-heart{
+ position:fixed;bottom:-30px;font-size:22px;
+ pointer-events:none;animation:floatUp 4s linear forwards;z-index:10;
 }
-
-.next-btn, .yes-btn, .no-btn {
-  font-family: inherit;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all .25s ease;
-}
-
-.next-btn {
-  margin-top: 25px;
-  padding: 13px 25px;
-  background: #ffb6d0;
-  color: #570d2d;
-  font-size: 15px;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 13px;
-  margin-top: 30px;
-}
-
-.yes-btn {
-  background: #ff4f91;
-  color: white;
-  font-size: 17px;
-  padding: 13px 25px;
-  box-shadow: 0 5px 18px rgba(255,50,130,.35);
-  z-index: 2;
-}
-
-.no-btn {
-  background: #eeeeee;
-  color: #444;
-  font-size: 16px;
-  padding: 13px 25px;
-  min-width: 65px;
-  min-height: 40px;
-  z-index: 1;
-}
-
-#hint {
-  margin-top: 20px;
-  color: #ffd5e5;
-  font-size: 14px;
-}
-
-#ending {
-  display: none;
-  animation: appear 1s ease;
-}
-
-#ending h1 {
-  color: #ffb6d0;
-}
-
-.float-heart {
-  position: fixed;
-  bottom: -30px;
-  font-size: 22px;
-  pointer-events: none;
-  animation: floatUp 4s linear forwards;
-  z-index: 10;
-}
-
-@keyframes floatUp {
-  to {
-    transform: translateY(-110vh) rotate(360deg);
-    opacity: 0;
-  }
+@keyframes floatUp{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
 }
 </style>
 </head>
 
 <body>
 
-<!-- PAGE 1 -->
 <section class="page active" id="page1">
-  <div class="heart">❤️</div>
+ <div class="heart">❤️</div>
+ <h1>A Little Something I Want To Tell You...</h1>
 
-  <h1>A Little Something I Want To Tell You...</h1>
+ <p>
+ မမသဲသဲရေ… 🥺💕
+ <br><br>
+ ဒီစာလေးကို မမတစ်ယောက်တည်းအတွက်ပဲ
+ သေချာစဉ်းစားပြီး ရေးထားတာပါ။
+ <br><br>
+ မမကို စသိခဲ့တဲ့အချိန်ကစပြီး
+ မမအကြောင်းလေးတွေကို တဖြည်းဖြည်း
+ ပိုပြီးစိတ်ဝင်စားလာခဲ့တယ်။
+ <br><br>
+ မမရဲ့ အပြုံးလေးက အရမ်းချစ်ဖို့ကောင်းတယ်။
+ မမရဲ့ အသံလေးကြားရရင်လည်း
+ ဘာမှမဟုတ်တဲ့နေ့လေးတောင် ပျော်စရာကောင်းသွားတယ်။
+ <br><br>
+ မမနဲ့ စကားပြောရတဲ့အချိန်လေးတွေဆို
+ အချိန်ကုန်တာတောင် မြန်လွန်းတယ်လို့ ခံစားရတယ်။
+ တစ်ခါတလေ စကားပြောပြီးသွားရင်တောင်
+ မမနဲ့ပြောခဲ့တာလေးတွေ ပြန်တွေးနေမိတယ်။
+ <br><br>
+ မမရဲ့ အရပ်ပုပု သေးသေးလေးနဲ့
+ ချစ်စရာကောင်းတဲ့ အမူအရာလေးတွေကိုလည်း
+ သဘောကျမိတယ်။ 🤭❤️
+ <br><br>
+ မမကို သဘောကျတာက ခဏတာခံစားချက်လေး
+ မဟုတ်ဘူးဆိုတာ မမသိစေချင်တယ်။
+ <br><br>
+ တစ်ခါတလေ မမဆီက စာလေးတစ်ကြောင်းရရင်တောင်
+ တစ်နေ့လုံး ပျော်နေမိတတ်တယ်။
+ မမရဲ့ အပြုံးလေးတွေကို မြင်ချင်တယ်။
+ မမပျော်နေတာလေးကိုလည်း အမြဲမြင်ချင်တယ်။
+ <br><br>
+ ဒီစာလေးတွေက စကားလုံးလေးတွေပဲ ဖြစ်ပေမဲ့
+ အဲဒီထဲမှာ ကျနော့်ရဲ့ တကယ့်ခံစားချက်တွေ
+ အများကြီးပါနေတယ်နော်။
+ <br><br>
+ မမသဲသဲရေ… နောက်တစ်မျက်နှာလေးကိုလည်း
+ ဆက်ဖတ်ပေးပါဦး။ ❤️
+ </p>
 
-  <p>
-    ဒီစာအုပ်လေးက မမသဲသဲ တစ်ယောက်တည်းအတွက်ပါ။ ❤️
-    <br><br>
-    မမသဲသဲရဲ့ အပြုံးလေးတွေကို သဘောကျတယ်။
-    မမရဲ့ အသံလေးတွေကိုလည်း ကြားရတာ သဘောကျတယ်။
-    <br><br>
-    မမနဲ့ စကားပြောနေရတဲ့ အချိန်လေးတွေက
-    ကျနော့်အတွက် အရမ်းပျော်စရာကောင်းတယ်။
-    <br><br>
-    မမသဲသဲကို ပြောချင်တဲ့ စကားလေးတွေ
-    ဒီစာမျက်နှာလေးတွေထဲမှာ ထည့်ထားတယ်နော်။
-  </p>
-
-  <button class="next-btn" onclick="goToPage2()">
-    နောက်တစ်ခုဖတ်မယ် →
-  </button>
+ <button class="next-btn" onclick="goToPage2()">
+ နောက်တစ်ခုဖတ်မယ် →
+ </button>
 </section>
 
 
-<!-- PAGE 2 -->
 <section class="page" id="page2">
-  <div id="proposal">
+ <div id="proposal">
+  <div class="heart">💗</div>
 
-    <div class="heart">💗</div>
+  <h1>မမသဲသဲရဲ့ အဖြေလေး သိချင်ပါပြီ…</h1>
 
-    <h1>မမသဲသဲရဲ့ အဖြေလေး သိချင်ပါပြီ…</h1>
+  <p>
+ မမသဲသဲရေ… ❤️
+ <br><br>
+ မမကို ဒီလိုခံစားချက်လေးတွေ ပြောပြဖို့
+ ကျနော် အကြိမ်ကြိမ် စဉ်းစားခဲ့ဖူးတယ်။
+ <br><br>
+ မမကို ချစ်တယ်လို့ ပြောလိုက်ရင်
+ မမဘယ်လိုထင်မလဲဆိုပြီးလည်း စိုးရိမ်ခဲ့တယ်။
+ ဒါပေမဲ့ မမအပေါ်ထားတဲ့ ခံစားချက်တွေကို
+ ဆက်ပြီးဖုံးကွယ်မထားချင်တော့ဘူး။
+ <br><br>
+ ကျနော် ဒီစကားလေးကို ပြောခဲ့တာလည်း
+ အခုဆို တစ်လပြည့်သွားပြီနော်။
+ ဒီတစ်လအတွင်း မမရဲ့ အဖြေလေးကို
+ မျှော်လင့်ရင်း စောင့်နေခဲ့တာပါ။ 🥺
+ <br><br>
+ ကျနော်က မမကို အမြဲပျော်ရွှင်စေချင်တယ်။
+ စိတ်ညစ်တဲ့အခါ နားထောင်ပေးချင်တယ်။
+ ပျော်တဲ့အခါ အတူတူရယ်မောချင်တယ်။
+ မမရဲ့ နေ့ရက်လေးတွေထဲမှာ
+ ပျော်ရွှင်မှုလေးတွေ ထပ်ဖြည့်ပေးနိုင်တဲ့သူ
+ ဖြစ်ချင်တယ်။
+ <br><br>
+ မမကို အတင်းအကျပ်တော့ မဖြစ်စေချင်ပါဘူး။
+ မမရဲ့ ဆုံးဖြတ်ချက်ကိုလည်း လေးစားပေးပါ့မယ်။
+ ဒါပေမဲ့ ကျနော့်ရဲ့ ဆန္ဒလေးတစ်ခုကိုတော့
+ မမကို ပြောခွင့်ပေးပါနော်…
+ <br><br>
+ <strong>မမသဲသဲရေ… ကျနော့်ရဲ့ ချစ်သူလေး
+ ဖြစ်ပေးနိုင်မလားဟင်။ 💍❤️</strong>
+ </p>
 
-    <p>
-      ကျနော် ဒီစကားလေးကို ပြောခဲ့တာလည်း
-      အခုဆို တစ်လပြည့်သွားပြီနော်။ ❤️
-      <br><br>
-      မမသဲသဲရေ…
-      <br>
-      ကျနော့်ရဲ့ ချစ်သူလေး ဖြစ်ပေးနိုင်မလားဟင်။
-    </p>
-
-    <div class="buttons" id="choiceButtons">
-      <button class="yes-btn" id="yesBtn" onclick="chooseYes()">
-        YES ❤️
-      </button>
-
-      <button class="no-btn" id="noBtn" onclick="chooseNo()">
-        NO 💔
-      </button>
-    </div>
-
-    <div id="hint">မမရဲ့ အဖြေလေးကို စောင့်နေမယ်နော်… 🥺</div>
+  <div class="buttons" id="choiceButtons">
+   <button class="yes-btn" id="yesBtn" onclick="chooseYes()">
+    YES ❤️
+   </button>
+   <button class="no-btn" id="noBtn" onclick="chooseNo()">
+    NO 💔
+   </button>
   </div>
 
-  <div id="ending">
-    <div class="heart">💍❤️</div>
+  <div id="hint">မမရဲ့ အဖြေလေးကို စောင့်နေမယ်နော်… 🥺</div>
+ </div>
 
-    <h1>YOU ARE MY LOVE ❤️</h1>
+ <div id="ending">
+  <div class="heart">💍❤️</div>
+  <h1>YOU ARE MY LOVE ❤️</h1>
 
-    <p>
-      တကယ်ပဲလား မမသဲသဲရေ… 🥹❤️
-      <br><br>
-      ဒီနေ့ကစပြီး မမသဲသဲကို ချစ်သူလို့
-      ခေါ်ခွင့်ရပြီပေါ့နော်။
-      <br><br>
-      မမသဲသဲရဲ့ အပြုံးလေးတွေကို
-      ပျော်ရွှင်စေချင်တယ်။
-      ဝမ်းနည်းတဲ့အချိန်တွေမှာလည်း
-      အနားမှာရှိပေးချင်တယ်။
-      <br><br>
-      စိတ်ဆိုးတဲ့အခါ ချော့ပေးမယ်။
-      ပျော်တဲ့အခါ အတူတူရယ်မယ်။
-      အမြဲတမ်း အကောင်းဆုံးချစ်သူတစ်ယောက်
-      ဖြစ်အောင် ကြိုးစားပါ့မယ်။
-      <br><br>
-      ဒီနေ့ကစပြီး ကျနော်တို့ရဲ့
-      အချစ်ဇာတ်လမ်းလေး စတင်ပါပြီ။ ❤️
-      <br><br>
-      <strong>I LOVE YOU, မမသဲသဲ။ 💍💕</strong>
-    </p>
-  </div>
+  <p>
+   တကယ်ပဲလား မမသဲသဲရေ… 🥹❤️
+   <br><br>
+   ဒီနေ့ကစပြီး မမသဲသဲကို
+   ချစ်သူလို့ ခေါ်ခွင့်ရပြီပေါ့နော်။
+   <br><br>
+   မမရဲ့ အပြုံးလေးတွေကို အမြဲပျော်ရွှင်စေချင်တယ်။
+   ဝမ်းနည်းတဲ့အချိန်တွေမှာလည်း
+   မမဘေးနားမှာ ရှိနေပေးချင်တယ်။
+   <br><br>
+   စိတ်ဆိုးတဲ့အခါ ချော့ပေးမယ်။
+   ပျော်တဲ့အခါ အတူတူရယ်မယ်။
+   မမရဲ့ စိတ်ကူးလေးတွေကိုလည်း
+   နားထောင်ပေးချင်တယ်။
+   <br><br>
+   မမကို ချစ်တယ်ဆိုတဲ့ စကားလေးတစ်ခွန်းထက်
+   မမကို တကယ်တန်ဖိုးထားပြီး
+   ချစ်ပေးနိုင်တဲ့သူတစ်ယောက် ဖြစ်ချင်တယ်။
+   <br><br>
+   ဒီနေ့ကစပြီး ကျနော်တို့ရဲ့
+   အချစ်ဇာတ်လမ်းလေး စတင်ပါပြီ။
+   <br><br>
+   <strong>I LOVE YOU, မမသဲသဲ။ 💍💕</strong>
+  </p>
+ </div>
 </section>
 
 
@@ -246,83 +205,80 @@ let noNotified = false;
 let yesChosen = false;
 
 function notifyChoice(choice) {
-  try {
-    fetch(NOTIFY_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-      },
-      body: new URLSearchParams({
-        choice: choice,
-        source: "Love File — မမသဲသဲ"
-      }).toString()
-    });
-  } catch (e) {}
+ try {
+  fetch(NOTIFY_URL, {
+   method: "POST",
+   mode: "no-cors",
+   headers: {
+    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+   },
+   body: new URLSearchParams({
+    choice: choice,
+    source: "Love File — မမသဲသဲ"
+   }).toString()
+  });
+ } catch(e) {}
 }
 
 function goToPage2() {
-  document.getElementById("page1").classList.remove("active");
-  document.getElementById("page2").classList.add("active");
+ document.getElementById("page1").classList.remove("active");
+ document.getElementById("page2").classList.add("active");
 }
 
 function chooseNo() {
-  if (yesChosen) return;
+ if(yesChosen) return;
 
-  noCount++;
+ noCount++;
 
-  const yesBtn = document.getElementById("yesBtn");
-  const noBtn = document.getElementById("noBtn");
+ const yesBtn = document.getElementById("yesBtn");
+ const noBtn = document.getElementById("noBtn");
 
-  yesBtn.style.fontSize = (17 + noCount * 2) + "px";
-  yesBtn.style.padding =
-    (13 + noCount) + "px " + (25 + noCount * 2) + "px";
+ yesBtn.style.fontSize = (17 + noCount * 2) + "px";
+ yesBtn.style.padding =
+  (13 + noCount) + "px " + (25 + noCount * 2) + "px";
 
-  const scale = Math.max(0.15, 1 - noCount * 0.085);
-  noBtn.style.transform = "scale(" + scale + ")";
+ const scale = Math.max(0.15, 1 - noCount * 0.085);
+ noBtn.style.transform = "scale(" + scale + ")";
 
-  if (!noNotified) {
-    notifyChoice("NO 💔");
-    noNotified = true;
-  }
+ if(!noNotified) {
+  notifyChoice("NO 💔");
+  noNotified = true;
+ }
 
-  if (noCount >= 10) {
-    noBtn.remove();
-    document.getElementById("hint").textContent = "❤️";
-  }
+ if(noCount >= 10) {
+  noBtn.remove();
+  document.getElementById("hint").textContent = "❤️";
+ }
 }
 
 function chooseYes() {
-  if (yesChosen) return;
+ if(yesChosen) return;
 
-  yesChosen = true;
+ yesChosen = true;
+ notifyChoice("YES ❤️");
 
-  notifyChoice("YES ❤️");
+ document.getElementById("proposal").style.display = "none";
+ document.getElementById("ending").style.display = "block";
 
-  document.getElementById("proposal").style.display = "none";
-  document.getElementById("ending").style.display = "block";
-
-  burst(120);
+ burst(120);
 }
 
 function burst(amount) {
-  for (let i = 0; i < amount; i++) {
-    setTimeout(() => {
-      const heart = document.createElement("div");
-      heart.className = "float-heart";
-      heart.textContent = ["❤️", "💕", "💗", "💖", "💘"][
-        Math.floor(Math.random() * 5)
-      ];
+ for(let i = 0; i < amount; i++) {
+  setTimeout(() => {
+   const heart = document.createElement("div");
+   heart.className = "float-heart";
+   heart.textContent = ["❤️","💕","💗","💖","💘"][
+    Math.floor(Math.random() * 5)
+   ];
+   heart.style.left = Math.random() * 100 + "vw";
+   heart.style.animationDuration =
+    (3 + Math.random() * 3) + "s";
 
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration =
-        (3 + Math.random() * 3) + "s";
-
-      document.body.appendChild(heart);
-
-      setTimeout(() => heart.remove(), 6000);
-    }, i * 25);
-  }
+   document.body.appendChild(heart);
+   setTimeout(() => heart.remove(), 6000);
+  }, i * 25);
+ }
 }
 </script>
 
