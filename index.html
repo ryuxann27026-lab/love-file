@@ -2,289 +2,305 @@
 <html lang="my">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>A Little Something I Want To Tell You…</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For မမသဲသဲ ❤️</title>
 
 <style>
-*{box-sizing:border-box}
-html,body{
-margin:0;min-height:100%;
-font-family:"Noto Sans Myanmar","Myanmar Text",system-ui,sans-serif
+* {
+  box-sizing: border-box;
 }
-body{
-background:linear-gradient(145deg,#fff7f9,#ffeef3 48%,#fffafb);
-color:#442d35;overflow:hidden
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe0eb, #ffc2d5, #fff0f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #71364d;
 }
-#app{
-min-height:100vh;display:flex;align-items:center;
-justify-content:center;padding:18px
+
+.card {
+  background: rgba(255,255,255,0.94);
+  width: 100%;
+  max-width: 440px;
+  padding: 28px 22px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 35px rgba(180,70,110,0.18);
+  position: relative;
+  overflow: hidden;
 }
-.page{
-display:none;width:min(92vw,560px);
-min-height:calc(100vh - 36px);
-max-height:calc(100vh - 36px);
-overflow-y:auto;padding:48px 26px 34px;
-border:1px solid #f0cbd5;border-radius:28px;
-background:rgba(255,255,255,.9);
-box-shadow:0 14px 45px rgba(129,57,78,.13);
-text-align:center;animation:in .35s ease
+
+h1 {
+  color: #e65383;
+  font-size: 25px;
 }
-.page.active{
-display:flex;flex-direction:column;justify-content:center
+
+p {
+  font-size: 16px;
+  line-height: 1.9;
+  text-align: left;
 }
-@keyframes in{
-from{opacity:0;transform:translateX(22px)}
-to{opacity:1;transform:none}
+
+.heart {
+  font-size: 35px;
+  margin: 10px;
 }
-.num{
-font-size:13px;letter-spacing:2px;
-color:#b67889;margin-bottom:20px
+
+.page {
+  display: none;
 }
-h1{
-font-size:26px;line-height:1.45;
-color:#8b1e3f;margin:0 0 24px
+
+.page.active {
+  display: block;
 }
-h2{
-font-size:22px;line-height:1.5;
-color:#8b1e3f;margin:0 0 24px
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 13px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 5px;
+  transition: all 0.25s ease;
 }
-p{
-font-size:16px;line-height:2.05;
-margin:0;color:#503840
+
+.next {
+  background: #ed6391;
+  color: white;
+  margin-top: 20px;
 }
-button{
-width:100%;border:0;border-radius:18px;
-padding:15px 14px;margin-top:28px;
-background:#8b1e3f;color:white;
-font-size:15px;font-weight:700;
-box-shadow:0 8px 20px rgba(139,30,63,.18);
-cursor:pointer
+
+.yes {
+  background: #ed6391;
+  color: white;
 }
-button:active{transform:scale(.98)}
-.choice-area{
-display:flex;flex-direction:column;
-align-items:center;gap:12px;margin-top:20px
+
+.no {
+  background: #eeeeee;
+  color: #555;
 }
-#yesBtn{
-width:100%;min-height:65px;font-size:22px;
-transition:all .3s ease;transform-origin:center
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 25px;
 }
-#noBtn{
-width:100%;transition:all .3s ease;
-transform-origin:center
+
+.small-text {
+  color: #c77995;
+  font-size: 13px;
+  text-align: center;
 }
-#ending h1{margin-top:25px}
-.answer{
-background:#fff2f5;color:#8b1e3f;
-border:1px solid #e8b9c6;box-shadow:none;
-margin-top:12px
+
+#ending {
+  display: none;
 }
-.hearts{
-position:fixed;inset:0;pointer-events:none;
-overflow:hidden;z-index:20
+
+#ending h1 {
+  font-size: 27px;
 }
-.heart{
-position:absolute;bottom:-30px;font-size:24px;
-animation:float 2.8s ease-out forwards
+
+.burst {
+  position: fixed;
+  top: -30px;
+  font-size: 25px;
+  pointer-events: none;
+  animation: fall 3s linear forwards;
+  z-index: 10;
 }
-@keyframes float{
-to{transform:translateY(-110vh) rotate(18deg);opacity:0}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 </style>
 </head>
 
 <body>
-<div id="app">
 
-<section class="page active" id="p1">
-<div class="num">PAGE 1 / 7</div>
-<h1>♡<br>A Little Something I Want To Tell You…</h1>
-<p>ဒီစာအုပ်လေးက မမသဲသဲ တစ်ယောက်တည်းအတွက်ပါ။</p>
-<button onclick="go(2)">နောက်တစ်ခုဖတ်မယ် →</button>
-</section>
+<div class="card">
 
-<section class="page" id="p2">
-<div class="num">PAGE 2 / 7</div>
-<h2>ဒီစာကို မမသဲသဲတစ်ယောက်တည်းအတွက်</h2>
-<p>
-ဒီစာကိုရေးဖို့ အချိန်နည်းနည်းယူခဲ့တယ်။<br><br>
-ဘာလို့လဲဆိုတော့ စိတ်ထဲမှာရှိတာတွေကို ရိုးရိုးလေးပြောလိုက်ရင် မလုံလောက်သလိုခံစားရလို့ပါ။
-</p>
-<button onclick="go(3)">နောက်တစ်ခုဖတ်မယ် →</button>
-</section>
+  <!-- PAGE 1 -->
+  <section class="page active" id="page1">
+    <div class="heart">💗</div>
+    <h1>A Little Something For You...</h1>
 
-<section class="page" id="p3">
-<div class="num">PAGE 3 / 7</div>
-<h2>အရမ်းသဘောကျရတဲ့ပုံစံလေး</h2>
-<p>
-မင်းမှာ သဘောကျစရာ ဘာရှိလို့လဲဆိုတာကို ပြောပြဖို့က နည်းနည်းတော့ခက်တယ်။<br>
-ဘာလို့လဲဆိုရင် မင်းကိုသဘောကျမိတဲ့အချက်တွေက အရမ်းများနေမိလို့လေ။<br><br>
-အရပ်ပုပုသေးသေးလေးကို အရမ်းသဘောကျတယ်။<br>
-ပြီးတော့ Voice Clip ပို့တဲ့အခါ ကြားရတဲ့ အသဲဝဲဝဲလေးကို အရမ်းအူယားတယ်။<br>
-စိတ်ဆိုးလို့ ပြောရင်တောင် အသံကြားတာနဲ့ ကိုယ့်မှာ ပြုံးလို့ပဲ။<br><br>
-အဲ့တာတွေထဲမှာ သဘောကျဆုံးက မမသဲသဲနဲ့ စကားပြောရတဲ့အချိန်ပေါ့ဗျာ။<br><br>
-မမသဲသဲနဲ့ စကားမပြောဖြစ်တဲ့အချိန်တွေဆို စိတ်ထဲမှာ တစ်ခုခုဖြစ်လာတယ်ဗျာ။
-</p>
-<button onclick="go(4)">နောက်တစ်ခုဖတ်မယ် →</button>
-</section>
+    <p>
+      မမသဲသဲရေ... ❤️
+      <br><br>
+      ဒီစာလေးကို မမသဲသဲအတွက်ပဲ ရည်ရွယ်ပြီး ရေးထားတာပါ။
+      <br><br>
+      တစ်ခါတလေ လူတစ်ယောက်ကို သဘောကျမိဖို့ အကြောင်းပြချက်တွေ အများကြီး မလိုပါဘူး။ သူ့ရဲ့ အပြုံးလေးတစ်ခု၊ စကားပြောပုံလေးတစ်ခုကတောင် ကိုယ့်ရဲ့နေ့ရက်တွေကို ပျော်ရွှင်စေနိုင်ပါတယ်။
+      <br><br>
+      မမသဲသဲနဲ့ စကားပြောရတဲ့အချိန်တွေ၊ မမရဲ့အသံလေးတွေ ကြားရတဲ့အချိန်တွေက ကျနော့်အတွက် တကယ်ကို အမှတ်တရဖြစ်စေပါတယ်။
+      <br><br>
+      မမသဲသဲကို သဘောကျတဲ့စိတ်က တစ်နေ့တခြား ပိုပြီးများလာခဲ့တယ်။ ဒီခံစားချက်လေးကို မမသိစေချင်လို့ ဒီစာလေးကို ဖန်တီးထားတာပါ။
+      <br><br>
+      ဒီစာလေးကို အဆုံးထိ ဖတ်ပေးပါနော်။ 🥺
+    </p>
 
-<section class="page" id="p4">
-<div class="num">PAGE 4 / 7</div>
-<h2>ကျနော် မပြောဖြစ်သေးတဲ့အရာ</h2>
-<p>
-တကယ်တော့…<br>
-မမသဲသဲကို သူငယ်ချင်းတစ်ယောက်ထက်ပိုပြီး<br>
-သဘောကျနေမိတာ ကြာပြီ။<br><br>
-ဒါပေမယ့် ဒီစကားကို ထုတ်ပြောဖို့ကြောက်နေလို့ ဘယ်လိုပြောရမလဲဆိုတာ<br>
-အမြဲစဉ်းစားနေခဲ့တာကြာပြီ။
-</p>
-<button onclick="go(5)">နောက်တစ်ခုဖတ်မယ် →</button>
-</section>
+    <button class="next" onclick="showPage2()">
+      နောက်တစ်ခုဖတ်မယ် →
+    </button>
+  </section>
 
-<section class="page" id="p5">
-<div class="num">PAGE 5 / 7</div>
-<h2>ဒီနေ့တော့ မဝှက်တော့ဘူး။</h2>
-<p>
-ကျနော် မမသဲသဲကို သဘောကျတယ်။<br>
-မမသဲသဲနဲ့အတူ ခိုင်မာတဲ့ Relationship တစ်ခုအဖြစ် တည်ဆောက်ချင်တယ်။<br><br>
-အစကတော့ ဒီတိုင်းပဲ ဖလစ်တာပဲ။ ဒါမယ့် ဖလစ်ရင်းချစ်သွားလို့ 🥹<br>
-အရင်ကလိုမျိုး မဖလစ်ချင်တော့ဘူး။<br>
-မမသဲသဲကို ကိုယ့်အပိုင်ဖြစ် ပိုင်ဆိုင်ချင်တယ်။<br>
-မမသဲသဲဘက်က အဆင်ပြေတယ်ဆိုရင်တော့ အတူလက်တွဲသွားချင်ပါတယ်။<br><br>
-<b>ဒါကြောင့်…</b>
-</p>
-<div style="font-size:24px;font-weight:700;color:#8b1e3f;margin-top:12px">
-Will You Be Mine? ❤️
-</div>
-<button onclick="go(6)">နောက်တစ်ခုဖတ်မယ် →</button>
-</section>
 
-<section class="page" id="p6">
-<div class="num">PAGE 6 / 7</div>
-<h2>နောက်ဆုံးစာ</h2>
-<p>
-မမသဲသဲရဲ့အဖြေက ဘာပဲဖြစ်ဖြစ်<br>
-ဒီစကားကို ပြောရဲခဲ့တာကိုတော့ ကျနော်နောင်တရမှာမဟုတ်ဘူး။<br><br>
-ဘာလို့လဲဆိုတော့<br>
-ကျနော့်စိတ်ထဲက အမှန်အတိုင်း မမသဲသဲကို ပြောပြလိုက်နိုင်ပြီမို့ပါ။ 🤍
-</p>
-<button onclick="go(7)">နောက်တစ်ခုဖတ်မယ် →</button>
-</section>
+  <!-- PAGE 2 -->
+  <section class="page" id="page2">
 
-<section class="page" id="p7">
-<div class="num">LAST PAGE · 7 / 7</div>
-<h2>မမသဲသဲရဲ့ အဖြေလေး ❤️</h2>
-<p id="question">
-ကျနော့်ဘက်ကတော့ မမသဲသဲကို ရွေးချယ်ပြီးပါပြီ။<br><br>
-အခု မမသဲသဲရဲ့အဖြေလေးကို သိချင်ပါတယ်။<br>
-ကျနော်နဲ့အတူတူ လက်တွဲသွားဖို့ ဆန္ဒရှိလား။ 🥺
-</p>
+    <div id="proposal">
+      <div class="heart">🥺💗</div>
+      <h1>မမသဲသဲရဲ့ အဖြေလေး သိချင်ပါပြီ…</h1>
 
-<div class="choice-area" id="choiceArea">
-<button id="yesBtn" onclick="chooseYes()">YES ❤️</button>
-<button id="noBtn" class="answer" onclick="chooseNo()">NO 💔</button>
-</div>
+      <p>
+        မမသဲသဲရေ…
+        <br><br>
+        ကျနော် ဒီစကားလေးကို ပြောခဲ့တာလည်း အခုဆို တစ်လပြည့်သွားပြီနော်။
+        <br><br>
+        အဲ့ဒီတစ်လအတွင်း မမသဲသဲကို အဖြေပေးဖို့ အချိန်ယူပြီး စဉ်းစားခွင့်ပေးခဲ့ပါတယ်။ မမသဲသဲရဲ့ ဆုံးဖြတ်ချက်ကိုလည်း ကျနော် နားလည်ပေးချင်ပါတယ်။
+        <br><br>
+        ဒါပေမဲ့ အခုတော့ ကျနော်လည်း မမသဲသဲဆီက အဖြေလေးတစ်ခု ကြားချင်နေပါပြီ။ တစ်လတောင် ပြည့်သွားပြီဆိုတော့ အဖြေလေးပေးသင့်ပြီလို့ ထင်မိတယ်ဗျာ။ 🤭
+        <br><br>
+        ကျနော်ကတော့ မမသဲသဲနဲ့အတူ ရယ်မောရင်း၊ တစ်ယောက်ကိုတစ်ယောက် ဂရုစိုက်ရင်း၊ ပျော်ရွှင်စရာနေ့ရက်လေးတွေ အတူတူဖြတ်သန်းချင်ပါတယ်။
+        <br><br>
+        <b>မမသဲသဲရေ… ကျနော့်ရဲ့ ချစ်သူလေး ဖြစ်ပေးနိုင်မလားဟင်။</b> 🥹💗
+        <br><br>
+        ကဲ… ဒီတစ်ခါတော့ မမသဲသဲရဲ့ အဖြေလေးကို ရင်ခုန်စွာနဲ့ စောင့်နေပါပြီ။
+        <br><br>
+        <b>Will You Be Mine? ❤️</b>
+      </p>
 
-<div id="ending" style="display:none">
-<h1>YOU ARE MY LOVE ❤️</h1>
-<p>
-တကယ်ပဲလား မမသဲသဲရေ… 🥹❤️<br><br>
-ဒီနေ့ကစပြီး မမသဲသဲကို ချစ်သူလို့ ခေါ်ခွင့်ရပြီပေါ့နော်။<br><br>
-မမသဲသဲရဲ့ အပြုံးလေးတွေကို ပျော်ရွှင်စေချင်တယ်။<br>
-ဝမ်းနည်းတဲ့အချိန်တွေမှာလည်း အနားမှာရှိပေးချင်တယ်။<br>
-စိတ်ဆိုးတဲ့အခါ ချော့ပေးမယ်။<br>
-ပျော်တဲ့အခါ အတူတူရယ်မယ်။<br><br>
-အမြဲတမ်း အကောင်းဆုံးချစ်သူတစ်ယောက်ဖြစ်အောင် ကြိုးစားပါ့မယ်။<br><br>
-<b>ဒီနေ့ကစပြီး ကျနော်တို့ရဲ့ အချစ်ဇာတ်လမ်းလေး စတင်ပါပြီ။ ❤️</b><br><br>
-I LOVE YOU, မမသဲသဲ။ 💍💕
-</p>
-</div>
-</section>
+      <div class="buttons">
+        <button class="yes" id="yesBtn" onclick="chooseYes()">
+          YES ❤️
+        </button>
 
+        <button class="no" id="noBtn" onclick="chooseNo()">
+          NO 💔
+        </button>
+      </div>
+
+      <div class="small-text" id="hint">
+        မမသဲသဲရဲ့ အဖြေလေးကို စောင့်နေပါတယ် ❤️
+      </div>
+    </div>
+
+    <!-- YES ENDING -->
+    <div id="ending">
+      <div class="heart">💍❤️</div>
+      <h1>YOU ARE MY LOVE ❤️</h1>
+
+      <p>
+        တကယ်ပဲလား မမသဲသဲရေ… 🥹❤️
+        <br><br>
+        ဒီနေ့ကစပြီး မမသဲသဲကို ချစ်သူလို့ ခေါ်ခွင့်ရပြီပေါ့နော်။
+        <br><br>
+        မမသဲသဲရဲ့ အပြုံးလေးတွေကို ပျော်ရွှင်စေချင်တယ်။ ဝမ်းနည်းတဲ့အချိန်တွေမှာလည်း အနားမှာရှိပေးချင်တယ်။
+        <br><br>
+        စိတ်ဆိုးတဲ့အခါ ချော့ပေးမယ်။ ပျော်တဲ့အခါ အတူတူရယ်မယ်။
+        <br><br>
+        အမြဲတမ်း အကောင်းဆုံးချစ်သူတစ်ယောက်ဖြစ်အောင် ကြိုးစားပါ့မယ်။
+        <br><br>
+        ဒီနေ့ကစပြီး ကျနော်တို့ရဲ့ အချစ်ဇာတ်လမ်းလေး စတင်ပါပြီ။
+        <br><br>
+        <b>I LOVE YOU, မမသဲသဲ။ 💍💕</b>
+      </p>
+    </div>
+
+  </section>
 </div>
 
-<div class="hearts" id="hearts"></div>
 
 <script>
-function go(n){
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-document.getElementById('p'+n).classList.add('active');
-window.scrollTo(0,0);
-}
-
-function burst(count=55){
-const box=document.getElementById('hearts');
-const icons=['❤️','💗','💕','💖','💘'];
-
-for(let i=0;i<count;i++){
-const h=document.createElement('span');
-h.className='heart';
-h.textContent=icons[Math.floor(Math.random()*icons.length)];
-h.style.left=Math.random()*100+'vw';
-h.style.fontSize=(16+Math.random()*25)+'px';
-h.style.animationDelay=(Math.random()*.9)+'s';
-box.appendChild(h);
-setTimeout(()=>h.remove(),3600);
-}
-}
-
-/* Telegram Notification */
 const NOTIFY_URL = "https://script.google.com/macros/s/AKfycbx3NnVgmlUFe6YmEXOKGv9OqY4E92lULW_2D0wjhyapDEdMLswqKQ4tcRls3LhY6yQTIw/exec";
 
-function notifyChoice(choice){
-if(!NOTIFY_URL)return;
+let noCount = 0;
+let noNotified = false;
+let yesChosen = false;
 
-try{
-fetch(NOTIFY_URL,{
-method:"POST",
-mode:"no-cors",
-headers:{
-"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"
-},
-body:new URLSearchParams({
-choice:choice,
-source:"Love File — မမသဲသဲ"
-}).toString()
-});
-}catch(e){}
+function notifyChoice(choice) {
+  if (!NOTIFY_URL) return;
+
+  try {
+    fetch(NOTIFY_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+      },
+      body: new URLSearchParams({
+        choice: choice,
+        source: "Love File — မမသဲသဲ"
+      }).toString()
+    });
+  } catch (e) {}
 }
 
-/* NO နှိပ်တိုင်း YES ကြီးလာမယ် */
-let noCount=0;
-let yesSize=1;
-let noSize=1;
-
-function chooseNo(){
-noCount++;
-
-notifyChoice("NO 💔 — မမသဲသဲက NO ကိုနှိပ်ခဲ့ပါတယ်");
-
-yesSize+=0.25;
-noSize*=0.75;
-
-const yesBtn=document.getElementById("yesBtn");
-const noBtn=document.getElementById("noBtn");
-
-yesBtn.style.transform=`scale(${yesSize})`;
-noBtn.style.transform=`scale(${noSize})`;
-
-if(noCount>=5){
-noBtn.style.opacity="0.5";
-}
+function showPage2() {
+  document.getElementById("page1").classList.remove("active");
+  document.getElementById("page2").classList.add("active");
 }
 
-/* YES နှိပ်ရင် ချစ်သူဖြစ်တဲ့ Ending */
-function chooseYes(){
-notifyChoice("YES ❤️ — မမသဲသဲက YES ရွေးချယ်လိုက်ပါပြီ");
+function chooseNo() {
+  if (yesChosen) return;
 
-burst(120);
+  noCount++;
 
-document.getElementById("choiceArea").style.display="none";
-document.getElementById("question").style.display="none";
-document.querySelector("#p7 .num").style.display="none";
-document.querySelector("#p7 h2").style.display="none";
+  const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+  const hint = document.getElementById("hint");
 
-document.getElementById("ending").style.display="block";
+  yesBtn.style.fontSize = (17 + noCount * 2) + "px";
+  yesBtn.style.padding =
+    (13 + noCount) + "px " + (24 + noCount * 2) + "px";
+
+  noBtn.style.fontSize = Math.max(10, 16 - noCount) + "px";
+  noBtn.style.padding =
+    Math.max(5, 13 - noCount) + "px " +
+    Math.max(9, 24 - noCount * 2) + "px";
+
+  if (!noNotified) {
+    notifyChoice("NO 💔");
+    noNotified = true;
+  }
+
+  hint.textContent = "မမသဲသဲရဲ့ ဆုံးဖြတ်ချက်ကို နားလည်ပေးပါမယ်နော် ❤️";
+}
+
+function chooseYes() {
+  if (yesChosen) return;
+  yesChosen = true;
+
+  notifyChoice("YES ❤️");
+
+  document.getElementById("proposal").style.display = "none";
+  document.getElementById("ending").style.display = "block";
+
+  for (let i = 0; i < 35; i++) {
+    setTimeout(createHeart, i * 100);
+  }
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "burst";
+  heart.textContent = ["❤️", "💕", "💗", "💖", "💘"][Math.floor(Math.random() * 5)];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (2 + Math.random() * 2) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 4000);
 }
 </script>
 
