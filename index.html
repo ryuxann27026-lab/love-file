@@ -2,18 +2,19 @@
 <html lang="my">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>For မမသဲသဲ ❤️</title>
+
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;min-height:100vh;padding:20px;
+ margin:0;min-height:100vh;padding:18px;
  display:flex;align-items:center;justify-content:center;
  background:linear-gradient(135deg,#ffe0eb,#ffc2d5,#fff0f5);
  font-family:Arial,sans-serif;color:#71364d;
 }
 .card{
- width:100%;max-width:440px;padding:26px 20px;
+ width:100%;max-width:440px;padding:25px 20px;
  background:#fffafa;border-radius:25px;text-align:center;
  box-shadow:0 10px 35px #d65b8433;overflow:hidden;
 }
@@ -45,6 +46,7 @@ button{
 }
 </style>
 </head>
+
 <body>
 <div class="card">
 
@@ -91,6 +93,7 @@ button{
 <button class="yes" id="yesBtn" onclick="chooseYes()">YES ❤️</button>
 <button class="no" id="noBtn" onclick="chooseNo()">NO 💔</button>
 </div>
+
 <div class="small-text" id="hint">မမသဲသဲရဲ့ အဖြေလေးကို စောင့်နေပါတယ် ❤️</div>
 </div>
 
@@ -144,34 +147,33 @@ function showPage2(){
 
 function chooseNo(){
  if(yesChosen)return;
+
  noCount++;
 
  const yesBtn=document.getElementById("yesBtn");
  const noBtn=document.getElementById("noBtn");
- const buttons=document.getElementById("buttons");
 
- yesBtn.style.fontSize=(17+noCount*2)+"px";
- yesBtn.style.padding=(13+noCount)+"px "+(24+noCount*2)+"px";
+ yesBtn.style.fontSize=(17+noCount*3)+"px";
+ yesBtn.style.padding=(13+noCount*2)+"px "+(24+noCount*3)+"px";
 
- noBtn.style.fontSize=Math.max(7,16-noCount*2)+"px";
- noBtn.style.padding=Math.max(3,13-noCount)+"px "+Math.max(5,24-noCount*2)+"px";
-
- // NO ခလုတ်ကို YES ရဲ့အောက်မှာထားမယ်
- buttons.insertBefore(yesBtn,noBtn);
- noBtn.style.transform="translateY(0)";
+ noBtn.style.fontSize=Math.max(5,16-noCount*2)+"px";
+ noBtn.style.padding=Math.max(1,13-noCount*2)+"px "+Math.max(2,24-noCount*3)+"px";
 
  if(!noNotified){
   notifyChoice("NO 💔");
   noNotified=true;
  }
 
- document.getElementById("hint").textContent=
- "မမသဲသဲရဲ့ ဆုံးဖြတ်ချက်ကို နားလည်ပေးပါမယ်နော် ❤️";
+ if(noCount>=6){
+  noBtn.style.display="none";
+  document.getElementById("hint").textContent="❤️";
+ }
 }
 
 function chooseYes(){
  if(yesChosen)return;
  yesChosen=true;
+
  notifyChoice("YES ❤️");
 
  document.getElementById("proposal").style.display="none";
